@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row ">
+        <h1 class="m-4 text-center">EJERCICIO 1: </h1>
+        <div class="col-md-12  m-4">
+            <label for="" class="form-label">TEXTO</label>
+            <input type="text" name="name" [(ngModel)]="name" class="form-control">
+            
+        </div>
+        <div class=" col-md-12 d-flex justify-content-left gap-3">
+            <p>RESULTADO: {{name | uppercase}}</p>
+        </div>
+    </div>
+   
+
+    <div class="row ">
+        <div class="col-md-12 gap-4">
+            <h1 class="text-center"> EJERCICIO 2: CURRENCY PIPE</h1>
+        </div>
+        <div class="col-md-12 ">
+            <label for="" class="form-label p-2 m-4 ">Valor: </label>
+            <input type="text" [(ngModel)]="inputValue" class="form-control">
+        </div>
+        <div class="col-md-12 m-3">
+            <select [(ngModel)]="currencyCode" class="form-select form-select-sm" name="currencyCode">
+                <option selected value="defecto" > Seleccione una opción </option>
+                <option value="USD">USD</option>
+                <option value="EUR">Euro</option>
+                
+            </select>
+        </div>
+       
+        <p *ngIf="currencyCode!=='defecto' ">{{ inputValue | currency:currencyCode }}</p>
+        
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center">EJERCICIO 3</h1>
+        </div>
+        <div>
+            <p>FECHA: 06/01/2023 17:24:09 =>  {{ '01/06/2023 17:24:09' | mipipe }}</p>
+            <p>FECHA: 06/01/2023 13:00 =>  {{ '01/06/2023 14:00' | mipipe }}</p>
+            <p>FECHA: 01/01/2023 12:00 =>  {{ '01/01/2023 12:00' | mipipe }}</p>
+            <p>FECHA: 01/02/2022 12:00 =>  {{ '02/01/2022 15:00' | mipipe }}</p>
+        </div>
+       
+    </div>
+   
+   
+</div>
